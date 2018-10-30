@@ -1,5 +1,6 @@
 /* Main chat container */
-@import "responsive/styleResponsive.css" screen and (max-width: 768px);
+@import "responsive/styleResponsiveMobile.css" screen and (max-width: 768px);
+@import "responsive/styleResponsiveDesktop.css" screen and (min-width: 768px);
 
 #chatContainer{
 	width:510px;
