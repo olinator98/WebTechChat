@@ -1,4 +1,5 @@
 /* Main chat container */
+@import "responsive/styleResponsive.css" screen and (max-width: 768px);
 
 #chatContainer{
 	width:510px;
