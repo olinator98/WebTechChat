@@ -3,10 +3,10 @@
 /* Database Configuration. Add your details below */
 
 $dbOptions = array(
-	'db_host' => '192.168.56.101',
-	'db_user' => 'webtechUserNormal',
-	'db_pass' => 'dIdnDN_1998*',
-	'db_name' => 'db_webtechChat'
+	'db_host' => '',
+	'db_user' => '',
+	'db_pass' => '',
+	'db_name' => ''
 );
 
 /* Database Config End */
