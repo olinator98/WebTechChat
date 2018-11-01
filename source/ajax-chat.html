@@ -9,37 +9,36 @@
 <link rel="stylesheet" type="text/css" href="css/page.css" />
 <link rel="stylesheet" type="text/css" href="css/chat.css" />
 
+
 </head>
 
 <body>
 
-<div id="chatContainer">
+<div class="col-9">
+    <h2> Welcome to the AJAX WebChat </h2>
+</div>
+<div class="col-3">
+  <form class="center">
+    <input class="button" type="button" value="Options" onclick="window.location.href='usrpage'" />
+  </form>
+</div>
 
-    <div id="chatTopBar" class="rounded"></div>
-    <div id="chatLineHolder"></div>
-    
-    <div id="chatUsers" class="rounded"></div>
-    <div id="chatBottomBar" class="rounded">
+<div class="col-12">
+
+  <div id="chatTopBar" class="rounded col-12"></div>
+    <div id="chatLineHolder" class="col-10"></div>
+
+    <div id="chatUsers" class="rounded col-4"></div>
+    <div id="chatBottomBar" class="rounded col-12">
     	<div class="tip"></div>
-        
-        <form id="loginForm" method="post" action="">
-            <input id="name" name="name" class="rounded" maxlength="16" />
-            <input id="email" name="email" class="rounded" />
-            <input type="submit" class="blueButton" value="Login" />
-        </form>
-        
+
         <form id="submitForm" method="post" action="">
             <input id="chatText" name="chatText" class="rounded" maxlength="255" />
             <input type="submit" class="blueButton" value="Submit" />
         </form>
-        
-    </div>
-    
-</div>
 
-<div id="footer">
-	<div class="tri"></div>
-	<h1>Making an AJAX Web Chat With PHP and jQuery. This is the test if the upload works correctly</h1>
+    </div>
+
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
