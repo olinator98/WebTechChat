@@ -4,8 +4,9 @@
 }
 
 .header {
-    background-color: #212121;
+    background-color: #7269db;
     color: #ffffff;
+    height: 140px;
 }
 
 .signIn {
@@ -25,14 +26,39 @@
   align-items: center;
   flex-direction: column;
   color: #ffffff;
-  background: #8e9299;
+  background: #d0d0d0;
   padding: 1%;
+  border:1px solid #b2b2b2;
 }
 
 .watermark {
     position: fixed;
     bottom: 10px;
     left: 10px;
+}
+
+.rounded{
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+
+.button{
+	background:url('../../img/button_blue.png') no-repeat;
+	border:none !important;
+	color:#FFFFFF !important;
+	display:inline-block;
+	font-size:13px;
+	height:29px;
+	text-align:center;
+	text-shadow:1px 1px 0 rgba(255, 255, 255, 0.4);
+	width:75px;
+	margin:0;
+	cursor:pointer;
+}
+
+.button:hover{
+	background-position:left bottom;
 }
 
 div h2 {
@@ -50,7 +76,7 @@ div h2 {
 [class*="col-"] {
     float: left;
     padding: 15px;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 /* For desktop: */

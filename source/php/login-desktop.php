@@ -16,16 +16,16 @@
     </div>
     <div class="col-6 header signIn">
       <form id = "loginForm" name = "loginForm" method = "POST" action = "checkLogin.php">
-        Username:
+        <label for="username">Username:</label><br />
         <input type = "text" id = "username" name = "username" placeholder = "username" required/><br>
-        Password:
+        <label for="password">Password:</label><br />
         <input type = "password" id = "password" name = "password" placeholder = "password" required/><br>
-        <button type = "submit">Login </button>
+        <button class="button" type = "submit">Login </button>
       </form>
     </div>
 
   <div class="col-12 center">
-    <div class="signUp col-3">
+    <div class="signUp rounded col-3">
       <h2>
         Not registered yet?
       </h2>
@@ -34,23 +34,23 @@
       </p>
 
           <form id = "registerForm" name = "registerForm" method = "POST" action = "doRegistration.php">
-            Email:
+            <label for="email">Email:</label><br />
             <input type = "email" id = "email" name = "email" placeholder = "Email" required/><br>
-            Password:
+            <label for="passwordRegister">Password:</label><br />
             <input type = "password" id = "passwordRegister" name = "passwordRegister" placeholder = "password" required/><br>
-            Confirm Password:
+            <label for="passwordRegister">Password:</label><br />
             <input type = "password" id = "passwordConfirmRegister" name = "passwordConfirmRegister" placeholder = "password confirmation" onblur = "passwordEqualsPasswordConfirm()" required/><br>
-            Prename:
+            <label for="prename">Prename:</label><br />
             <input type = "text" id = "prename" name = "prename" placeholder = "Prename" required/><br><br>
-            Surname:
+            <label for="surname">Surname:</label><br />
             <input type = "text" id = "surname" name = "surname" placeholder = "Surname" required/><br>
-            Adress:
+            <label for="adress">Adress:</label><br />
             <input type = "text" id = "adress" name = "adress" placeholder = "Adress" required/><br>
-            Country:
+            <label for="country">Country:</label><br />
             <input type = "text" id = "country" name = "country" placeholder = "Country" required/><br>
 
 
-            <button type = "submit">Register </button>
+            <button class="button" type = "submit">Register </button>
           </form>
 
       <script>
