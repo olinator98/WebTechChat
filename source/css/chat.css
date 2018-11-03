@@ -1,42 +1,40 @@
 /* Main chat container */
-@import "responsive/styleResponsiveMobile.css" screen and (max-width: 768px);
-@import "responsive/styleResponsiveDesktop.css" screen and (min-width: 768px);
+*{
+	margin:0;
+	padding:0;
 
+	box-sizing: border-box;
+
+}
 #chatContainer{
-	width:510px;
-	margin:100px auto;
-	position:relative;
-}
+	padding: 1%; 
+	width: 100%;
+    float: left;
 
-
-/* Top Bar */
-
-
-#chatTopBar{
-	height:40px;
-	background:url('../img/solid_gray.jpg') repeat-x #d0d0d0;
-	border:1px solid #fff;
-	margin-bottom:15px;
-	position:relative;
+	background-color: cadetblue; 
 	
-	color:#777;
-	text-shadow:1px 1px 0 #FFFFFF;
+}
+#chatBottomBar {
+	padding: 5%; 
+    width: 100%;
+	float: left;
+	background-color: blue; 
+}
+#chatTopBar{
+    width: 100%;
+    float:left;
 }
 
-#chatTopBar .name{
-	position:absolute;
-	top:10px;
-	left:40px;
+#footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;	
 }
-
-#chatTopBar img{
-	left:9px;
-	position:absolute;
-	top:8px;
-}
-
-
-/* Chats */
 
 
 #chatLineHolder{
@@ -105,21 +103,14 @@
 
 #chatUsers{
 	background-color:#202020;
-	border:1px solid #111111;
-	height:360px;
-	position:absolute;
-	right:0;
-	top:56px;
-	width:150px;
+    width: 30%;
 }
 
 #chatUsers .user{
 	background:url('http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?size=30') no-repeat 1px 1px #444444;
 	border:1px solid #111111;
 	float:left;
-	height:32px;
-	margin:10px 0 0 10px;
-	width:32px;
+    width:30%;
 }
 
 #chatUsers .user img{
@@ -170,7 +161,7 @@
 
 input#chatText{
 	/* The chat submit text field */
-	width:385px;
+	width:20%;
 }
 
 
@@ -178,6 +169,7 @@ input#chatText{
 
 
 .jspVerticalBar{
+    width: 100%;
 	background:none;
 	width:20px;
 }
@@ -279,4 +271,17 @@ p.noChats,
 	color:#fff;
 	
 	text-shadow:1px 1px 0 #940f0f;
+}
+
+
+@media only screen and (min-width: 768px) {
+    body{
+        padding: 2%;  
+    }
+
+    .jspContainer{
+        background-color: blue;
+        position:center;
+        width: 100%;
+    }
 }
