@@ -22,7 +22,6 @@
             </nav>
         </header>
 
-
         <article class = "login" name = "login" id = "login">
             <?php
                 include("php/login.php");
@@ -30,6 +29,8 @@
         </article>
 
         <article class = "information" name = "information" id = "information">
+
+
            <p>
            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
@@ -57,11 +58,5 @@
             <p>Oliver Werlen | Sven Guggisberg</p>
             <p>Webtech</p>
         </footer>
-
-
-
-        
-
-
   </body>
 </html>
