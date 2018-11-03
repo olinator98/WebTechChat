@@ -1,1 +1,150 @@
-/* responsive CSS for page goes here */
+*{
+	margin:0;
+	padding:0;
+
+	box-sizing: border-box;
+
+}
+.navigation{
+	padding: 1%;
+	width: 100%;
+	float: left;
+  background: #7269db;
+
+}
+.register {
+	padding: 5%;
+    width: 100%;
+	float: left;
+	background-color: blue;
+}
+.login {
+	padding: 5%;
+    width: 100%;
+	float: right;
+	background-color: yellow;
+}
+.information
+{
+	padding: 5%;
+    width: 100%;
+	float: left;
+	background-color: orange;
+}
+.footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #d0d0d0;
+    color: white;
+    text-align: center;
+}
+.jspContainer{
+    width:100%;
+}
+
+input[type=text], input[type=email], input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.register, .login{
+	border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .login {width: 25%;}
+	.information {width: 75%;}
+	.footer {width: 100%;}
+}
+
+a, a:visited {
+	text-decoration:none;
+	outline:none;
+	border-bottom:1px dotted #97cae6;
+	color:#97cae6;
+}
+
+a:hover{
+	border-bottom:1px dashed transparent;
+}
+
+.clear{
+	clear:both;
+}
+
+navigation {
+	overflow: hidden;
+	background-color: #2c305b;
+  }
+
+  .navigation a {
+	float: left;
+	display: block;
+	color:#2c305b;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+  }
+
+  .navigation a:hover {
+	background-color: red;
+	color: black;
+  }
+
+  .active {
+	background-color: #2c305b;
+	color: white;
+  }
+
+  .navigation .icon {
+	display: none;
+  }
+
+  @media screen and (max-width: 600px) {
+	.navigation a:not(:first-child) {display: none;}
+	.navigation a.icon {
+	  float: right;
+	  display: block;
+	}
+  }
+
+  @media screen and (max-width: 600px) {
+	.navigation.responsive {position: relative;}
+	.navigation.responsive .icon {
+	  position: absolute;
+	  right: 0;
+	  top: 0;
+	}
+	.navigation.responsive a {
+	  float: none;
+	  display: block;
+	  text-align: left;
+	}
+  }

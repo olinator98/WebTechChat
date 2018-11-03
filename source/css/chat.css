@@ -1,15 +1,6 @@
 /* import at the end to allow for overrideing in the imported file */
-@import "responsiveChat/styleResponsiveMobile.css" screen and (max-width: 768px);
-@import "responsiveChat/styleResponsiveDesktop.css" screen and (min-width: 768px);
-
-/* Main chat container */
-
-#chatContainer{
-	width:510px;
-	margin:100px auto;
-	position:relative;
-}
-
+@import "responsiveChat/styleResponsivePhone.css" screen and (max-width: 768px);
+@import "responsiveChat/styleResponsiveDesktop.css" screen and (min-width: 769px);
 
 /* Top Bar */
 

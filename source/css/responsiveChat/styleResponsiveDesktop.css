@@ -68,7 +68,7 @@ h2{
 
 /* override chat.css */
 
-#container{
+#chatContainer{
   height: 89vh;
   position: relative;
 }
