@@ -1,8 +1,3 @@
-
-/* import at the end to allow for overrideing in the imported file */
-@import "responsiveChat/styleResponsivePhone.css" screen and (max-width: 768px);
-@import "responsiveChat/styleResponsiveDesktop.css" screen and (min-width: 769px);
-=======
 /* Main chat container */
 *{
 	margin:0;
@@ -16,17 +11,8 @@
 	width: 100%;
     float: left;
 
-#chatTopBar{
-	height:40px;
-	background:url('../img/solid_gray.jpg') repeat-x #d0d0d0;
-	border:1px solid #b2b2b2;
-	margin-bottom:15px;
-	position:relative;
-	color:#777;
-	text-shadow:1px 1px 0 #FFFFFF;
 	background-color: cadetblue; 
 	
-
 }
 #chatBottomBar {
 	padding: 5%; 
@@ -52,8 +38,8 @@
 
 
 #chatLineHolder{
-	height:65vh;
-	width:90%;
+	height:360px;
+	width:350px;
 	margin-bottom:20px;
 }
 
@@ -62,7 +48,7 @@
 	min-height:24px;
 	padding:6px;
 	border:1px solid #FFFFFF;
-
+	
 	padding:8px 6px 4px 37px;
 	position:relative;
 	margin:0 10px 10px 0;
@@ -116,9 +102,8 @@
 
 
 #chatUsers{
-
+	background-color:#202020;
     width: 30%;
-
 }
 
 #chatUsers .user{
@@ -142,7 +127,7 @@
 	background:url('../img/solid_gray.jpg') repeat-x #d0d0d0;
 	position:relative;
 	padding:10px;
-	border:1px solid #b2b2b2;
+	border:1px solid #fff;
 }
 
 #chatBottomBar .tip{
@@ -222,7 +207,7 @@ a.logoutButton{
 	right:10px;
 	text-shadow:1px 1px 0 #888;
 	top:7px;
-
+	
 	-moz-box-shadow:0 0 7px #888 inset;
 	-webkit-box-shadow:0 0 7px #888 inset;
 	box-shadow:0 0 7px #888 inset;
@@ -230,7 +215,7 @@ a.logoutButton{
 
 a.logoutButton:hover{
 	text-shadow:1px 1px 0 #888;
-
+	
 	-moz-box-shadow:0 0 7px #666 inset;
 	-webkit-box-shadow:0 0 7px #666 inset;
 	box-shadow:0 0 7px #666 inset;
@@ -284,9 +269,11 @@ p.noChats,
 	padding:16px;
 	text-align:center;
 	color:#fff;
-
+	
 	text-shadow:1px 1px 0 #940f0f;
 }
+
+
 @media only screen and (min-width: 768px) {
     body{
         padding: 2%;  
@@ -298,4 +285,3 @@ p.noChats,
         width: 100%;
     }
 }
-

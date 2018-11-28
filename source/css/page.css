@@ -1,7 +1,4 @@
 
-@import "resonsivePage/styleResponsivePhone.css" screen and (max-width: 768px);
-=======
-
 *{
 	margin:0;
 	padding:0;
@@ -59,13 +56,6 @@ input[type=text], input[type=email], input[type=password], select {
     box-sizing: border-box;
 }
 
-
-body{
-	color:#eee;
-	background:#dddddd;
-	font:15px Calibri,Arial,sans-serif;
-	border-top:5px solid #212121;
-
 input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
@@ -75,7 +65,6 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-
 }
 
 input[type=submit]:hover {
@@ -110,23 +99,6 @@ a:hover{
 	clear:both;
 }
 
-@media only screen and (max-width: 768px) {
-      .show-mobile {
-        display: block;
-      }
-      .hide-mobile {
-        display: none;
-      }
-    }
-
- @media only screen and (min-width: 769px) {
-      .show-mobile {
-        display: none;
-      }
-      .hide-mobile {
-        display: block;
-      }
-    }
 navigation {
 	overflow: hidden;
 	background-color: teal;
@@ -177,4 +149,3 @@ navigation {
 	  text-align: left;
 	}
   }
-
