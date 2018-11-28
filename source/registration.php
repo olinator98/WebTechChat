@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -10,50 +11,30 @@
   <body>
 
         <header>
-
+            
             <nav class = "navigation" name = "navigation" id = "navigation">
-                <a href="index.php" class="active">Home</a>
-                <a href="#login">Login</a>
+                <a href="index.php">Home</a>
+                <a href="index.php#login">Login</a>
                 <a href="#information">Information</a>
-                <a href="registration.php">Register</a>
+                <a href="registration.php" class="active">Register</a>
                 <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
                 <i class="fa fa-bars"></i></a>
             </nav>
         </header>
 
+
         <article class = "login" name = "login" id = "login">
             <?php
-                include("php/login.php");
+                include("php/register.php");
             ?>
         </article>
 
         <article class = "information" name = "information" id = "information">
-
-
            <p>
-           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-           eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-           voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-           clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-           amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-           sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                This is the registration Page. Please insert your credits
             </p>
         </article>
         
-        <script>
-        function toggleMenu() {
-            var x = document.getElementById("navigation");
-            if (x.className === "navigation") {
-                x.className += " responsive";
-            } else {
-                x.className = "navigation";
-            }
-        }
-        </script>
-
-
         <script>
         function toggleMenu() {
             var x = document.getElementById("navigation");
@@ -69,5 +50,11 @@
             <p>Oliver Werlen | Sven Guggisberg</p>
             <p>Webtech</p>
         </footer>
+
+
+
+        
+
+
   </body>
 </html>

@@ -5,10 +5,6 @@
  * may not operate correctly without them.
  */
 
-.jspContainer{
-	overflow: hidden;
-	position: relative;
-}
 
 .jspPane{
 	position: absolute;

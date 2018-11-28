@@ -1,3 +1,4 @@
+
 /* makes padding and border included in width and height */
 * {
     box-sizing: border-box;
@@ -102,3 +103,6 @@ div h2 {
     	left:60%;
     }
 }
+=======
+
+

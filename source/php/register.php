@@ -1,4 +1,5 @@
 
+
     <form id = "registerForm" name = "registerForm" method = "POST" action = "doRegistration.php">
       Email:
       <input type = "email" id = "email" name = "email" placeholder = "Email" required/><br>

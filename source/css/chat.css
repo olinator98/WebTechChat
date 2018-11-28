@@ -1,9 +1,20 @@
+
 /* import at the end to allow for overrideing in the imported file */
 @import "responsiveChat/styleResponsivePhone.css" screen and (max-width: 768px);
 @import "responsiveChat/styleResponsiveDesktop.css" screen and (min-width: 769px);
+=======
+/* Main chat container */
+*{
+	margin:0;
+	padding:0;
 
-/* Top Bar */
+	box-sizing: border-box;
 
+}
+#chatContainer{
+	padding: 1%; 
+	width: 100%;
+    float: left;
 
 #chatTopBar{
 	height:40px;
@@ -11,25 +22,33 @@
 	border:1px solid #b2b2b2;
 	margin-bottom:15px;
 	position:relative;
-
 	color:#777;
 	text-shadow:1px 1px 0 #FFFFFF;
+	background-color: cadetblue; 
+	
+
+}
+#chatBottomBar {
+	padding: 5%; 
+    width: 100%;
+	float: left;
+	background-color: blue; 
+}
+#chatTopBar{
+    width: 100%;
+    float:left;
 }
 
-#chatTopBar .name{
-	position:absolute;
-	top:10px;
-	left:40px;
+#footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;	
 }
-
-#chatTopBar img{
-	left:9px;
-	position:absolute;
-	top:8px;
-}
-
-
-/* Chats */
 
 
 #chatLineHolder{
@@ -97,21 +116,16 @@
 
 
 #chatUsers{
-	background-color:#202020;
-	border:1px solid #111111;
-	right:20px;
-	top:140px;
-	width:8%;
-	margin-bottom:20px;
+
+    width: 30%;
+
 }
 
 #chatUsers .user{
 	background:url('http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?size=30') no-repeat 1px 1px #444444;
 	border:1px solid #111111;
 	float:left;
-	height:32px;
-	margin:10px 0 0 10px;
-	width:32px;
+    width:30%;
 }
 
 #chatUsers .user img{
@@ -162,7 +176,7 @@
 
 input#chatText{
 	/* The chat submit text field */
-	width:385px;
+	width:20%;
 }
 
 
@@ -170,6 +184,7 @@ input#chatText{
 
 
 .jspVerticalBar{
+    width: 100%;
 	background:none;
 	width:20px;
 }
@@ -272,3 +287,15 @@ p.noChats,
 
 	text-shadow:1px 1px 0 #940f0f;
 }
+@media only screen and (min-width: 768px) {
+    body{
+        padding: 2%;  
+    }
+
+    .jspContainer{
+        background-color: blue;
+        position:center;
+        width: 100%;
+    }
+}
+
