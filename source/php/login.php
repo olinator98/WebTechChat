@@ -1,6 +1,14 @@
 
 <?php
-@ session_start(); 
+@ session_start();
+@include('connection.php');
+@include('inputvalidation.php');
+
+// define variables and set to empty values
+$username = $password = "";
+
+$username = test_input($_POST['username']);
+$password = test_input($_POST['password']);
 
 ?>
     <h1>

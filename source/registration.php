@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel = "stylesheet" type = "text/css" href = "css/page.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <title>WebChat</title>
   </head>
   <body>
 
         <header>
-            
+
             <nav class = "navigation" name = "navigation" id = "navigation">
                 <a href="index.php">Home</a>
                 <a href="index.php#login">Login</a>
@@ -34,7 +34,7 @@
                 This is the registration Page. Please insert your credits
             </p>
         </article>
-        
+
         <script>
         function toggleMenu() {
             var x = document.getElementById("navigation");
@@ -53,7 +53,7 @@
 
 
 
-        
+
 
 
   </body>

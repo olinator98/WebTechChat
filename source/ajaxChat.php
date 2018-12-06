@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="js/jScrollPane/jScrollPane.css" />
 <link rel="stylesheet" type="text/css" href="css/page.css" />
 <link rel="stylesheet" type="text/css" href="css/chat.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
 
 
 </head>
@@ -28,20 +28,20 @@
 
     <div id="chatBottomBar" class="rounded">
     	<div class="tip"></div>
-        
+
         <form id="loginForm" method="post" action="">
             <input id="name" name="name" class="rounded" maxlength="16" />
             <input id="email" name="email" class="rounded" />
             <input type="submit" class="blueButton" value="Login" />
         </form>
-        
+
         <form id="submitForm" method="post" action="">
             <input id="chatText" name="chatText" class="rounded" maxlength="255" />
             <input type="submit" class="blueButton" value="Submit" />
         </form>
-        
+
     </div>
-    
+
 </div>
 
 <footer class = "footer">
@@ -59,9 +59,9 @@
                 x.className = "navigation";
             }
         }
-</script> 
+</script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="js/googleapis/jquery.min.js"></script>
 <script src="js/jScrollPane/jquery.mousewheel.js"></script>
 <script src="js/jScrollPane/jScrollPane.min.js"></script>
 <script src="js/script.js"></script>

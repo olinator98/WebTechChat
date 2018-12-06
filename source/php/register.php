@@ -1,3 +1,17 @@
+<?
+   @include('inputvalidation.php');
+
+	// define variables and set to empty values
+	$username = $password = "";
+
+	$username = test_input($_POST['username']);
+	$password = test_input($_POST['password']);
+	$email = test_email($_POST['email']);
+	if( $email = "Invalid email format" )
+	{
+		alert $email;
+	}
+?>
     <h1>
         Register
     </h1>
@@ -8,21 +22,15 @@
       <input type = "password" id = "passwordRegister" name = "passwordRegister" placeholder = "password" required/>
       <br>Confirm Password:<br>
       <input type = "password" id = "passwordConfirmRegister" name = "passwordConfirmRegister" placeholder = "password confirmation" onblur = "passwordEqualsPasswordConfirm()" required/>
-      <br>Prename:<br>
-      <input type = "text" id = "prename" name = "prename" placeholder = "Prename" required/>
-      <br>Surname:<br>
-      <input type = "text" id = "surname" name = "surname" placeholder = "Surname" required/>
-      <br>Adress:<br>
-      <input type = "text" id = "adress" name = "adress" placeholder = "Adress" required/>
-      <br>Country:<br>
-      <input type = "text" id = "country" name = "country" placeholder = "Country" required/><br>
-
-
+      <br>Username:<br>
+      <input type = "text" id = "username" name = "username" placeholder = "Username" required/>
       <input type = "submit"> </button>
-    </form> 
+    </form>
+
 
 <script>
-    var passwordConfirmed = false; 
+// Check if Password and confirm Password are equal
+    var passwordConfirmed = false;
 function passwordEqualsPasswordConfirm()
     {
         var password = document.getElementById("passwordRegister").value;
@@ -32,8 +40,8 @@ function passwordEqualsPasswordConfirm()
             passwordConfirmed = true;
         }
         else{
-            passwordConfirmed = false; 
-            alert("shit"); 
+            passwordConfirmed = false;
+            alert("Your Passwords do not match");
         }
     }
 </script>
