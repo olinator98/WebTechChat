@@ -31,16 +31,15 @@ try{
 	$response = array();
 	
 	// Handling the supported actions:
-	
+	echo $_GET['action'];
 	switch($_GET['action']){
-		/*case 'checkLogged':
+		case 'checkLogged':
 			$response = Chat::checkLogged();
 		break;
 		
 		case 'logout':
 			$response = Chat::logout();
 		break;
-		*/
 		case 'submitChat':
 			$response = Chat::submitChat($_POST['chatText']);
 		break;

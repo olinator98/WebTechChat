@@ -3,13 +3,17 @@
 class DB {
 	private static $instance;
 	private $MySQLi;
+	private $db_host = "192.168.56.101";
+	private $db_user = "aitec";
+	private $db_pass = "dachs";
+	private $db_name = "db_webchat";
 	
 	private function __construct(array $dbOptions){
 
-		$this->MySQLi = @ new mysqli(	$dbOptions['db_host'],
-										$dbOptions['db_user'],
-										$dbOptions['db_pass'],
-										$dbOptions['db_name'] );
+		$this->MySQLi = @ new mysqli(	$dbOptions[$db_host],
+										$dbOptions[$db_user],
+										$dbOptions[$db_pass],
+										$dbOptions[$db_name] );
 
 		if (mysqli_connect_errno()) {
 			throw new Exception('Database error.');

@@ -18,10 +18,7 @@ var chat = {
 	
 	init : function(){
 		
-		// Using the defaultText jQuery plugin, included at the bottom:
-		$('#name').defaultText('Nickname');
-		$('#email').defaultText('Email (Gravatars are Enabled)');
-		
+
 		// Converting the #chatLineHolder div into a jScrollPane,
 		// and saving the plugin's API in chat.data:
 		
@@ -145,7 +142,7 @@ var chat = {
 		
 		chat.data.name = name;
 		chat.data.gravatar = gravatar;
-		$('#chatTopBar').html(chat.render('loginTopBar',chat.data));
+		//$('#chatTopBar').html(chat.render('loginTopBar',chat.data));
 		
 		$('#loginForm').fadeOut(function(){
 			$('#submitForm').fadeIn();

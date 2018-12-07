@@ -123,23 +123,6 @@
 /* Bottom Bar */
 
 
-#chatBottomBar{
-	background:url('../img/solid_gray.jpg') repeat-x #d0d0d0;
-	position:relative;
-	padding:10px;
-	border:1px solid #fff;
-}
-
-#chatBottomBar .tip{
-	position:absolute;
-	width:0;
-	height:0;
-	border:10px solid transparent;
-	border-bottom-color:#eeeeee;
-	top:-20px;
-	left:20px;
-}
-
 #chatContainer input{
 	background:url('../img/input_bg.jpg') repeat-x #dcdcdc;
 	height:26px;
@@ -152,11 +135,6 @@
 	margin-right:5px;
 	width:185px;
 	outline:none;
-}
-
-
-#submitForm{
-	display:none;
 }
 
 input#chatText{

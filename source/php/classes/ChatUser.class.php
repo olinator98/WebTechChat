@@ -3,7 +3,7 @@
 class ChatUser extends ChatBase{
 	
 	protected $name = '', $gravatar = '';
-	
+/*	
 	public function save(){
 		
 		DB::query("
@@ -23,7 +23,7 @@ class ChatUser extends ChatBase{
 				'".DB::esc($this->name)."',
 				'".DB::esc($this->gravatar)."'
 			) ON DUPLICATE KEY UPDATE last_activity = NOW()");
-	}
+	}*/
 }
 
 ?>

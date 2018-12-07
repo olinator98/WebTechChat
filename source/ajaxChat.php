@@ -27,7 +27,7 @@
 <link rel="stylesheet" type="text/css" href="js/jScrollPane/jScrollPane.css" />
 <link rel="stylesheet" type="text/css" href="css/page.css" />
 <link rel="stylesheet" type="text/css" href="css/chat.css" />
-<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/font-awsome.min.css">
 
 
 </head>
@@ -50,8 +50,8 @@
     	<div class="tip"></div>
         
         <form id="loginForm" method="post" action="">
-            <input id="name" name="name" class="rounded" maxlength="16" />
-            <input id="email" name="email" class="rounded" />
+            <input id="name" name="name" class="rounded" maxlength="16" value = "peterpan"/>
+            <input id="email" name="email" class="rounded" value = "peterpan"/>
             <input type="submit" class="blueButton" value="Login" />
         </form>
         
@@ -81,7 +81,7 @@
         }
 </script> 
 
-<script src="src/jquery-3.1.1.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/jScrollPane/jquery.mousewheel.js"></script>
 <script src="js/jScrollPane/jScrollPane.min.js"></script>
 <script src="js/script.js"></script>
