@@ -8,6 +8,8 @@ ob_start();
 $password = $_POST["password"];
 $username = $_POST["username"];
 
+//INPUT VALIDATION HERE
+
 // Erzeugung von Passwort-Hash
 
 $hash = hash('sha256', $password);

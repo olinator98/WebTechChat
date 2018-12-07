@@ -16,6 +16,9 @@ $username= htmlspecialchars($_POST["email"]);
 //Useless $passwort = $_POST["passwort_register"];
 //Benutzereingaben Non-Login
 
+
+
+
 $_SESSION["userEmail"] = $username;
 $user_state = "user";
 $timestamp = time();
@@ -32,7 +35,8 @@ $hashDB = md5( rand(0,1000) ); // Generate random 32 character hash and assign i
 			$hash = hash('sha256', $password);
 				
 	
-	// new
+	// INPUT VALIDATION GOES HERE
+	
 	$qu_insertIntoUser =("INSERT INTO webchat_users(username, user_password, user_state, last_activity)
 	values ('" . $username . "',
 	'" . $hash . "' ,
