@@ -17,6 +17,7 @@
                 <a href="#login">Login</a>
                 <a href="#information">Information</a>
                 <a href="registration.php">Register</a>
+                <a href="php/logout.php">Logout</a>
                 <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
                 <i class="fa fa-bars"></i></a>
             </nav>

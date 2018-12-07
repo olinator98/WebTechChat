@@ -1,18 +1,44 @@
 <?php
 @ session_start();
-@include('connection.php');
+include("connection.php");
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+ob_start();
 
-$stmt = $pdo->prepare("SELECT COUNT(id) FROM webchat_users WHERE username = :username AND user_password = :user_password");
-$stmt->execute(array('username' => $username, 'user_password' => $password)); 
-$stmt->fetch();  
 
-if ($stmt->fetch())
-{
-    echo "found :)";
-} else {
-    echo "not found :'(";
+$password = $_POST["password"];
+$username = $_POST["username"];
+
+// Erzeugung von Passwort-Hash
+
+$hash = hash('sha256', $password);
+
+//echo $hash; 
+
+
+//Richtiger Benutzername
+$result = "Select username, user_password from webchat_users 
+where user_password = '$hash' 
+AND username ='$username'";
+
+$result = mysqli_query($db, $result);
+echo mysqli_error($db);
+$num_rows = mysqli_num_rows($result);
+
+
+
+$total = $num_rows;
+
+
+if($total == 1){
+	
+	$_SESSION["nameOfTheUser"] = $username;
+	unset ($_SESSION["anmeldungFalsch"]);
+	header("Location: http://192.168.56.101/source/ajaxChat.php"); //Umleitung bei korrekter Anmeldung auf die Main Site der Web
 }
+else{
+	$_SESSION["anmeldungFalsch"] = 0;
+   header("Location: http://192.168.56.101/source/index.php"); //Umleitung bei falscher Anmeldung auf die Startseite der Web 
+		 
+}
+
 ?>

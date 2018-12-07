@@ -1,16 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "aitec";
-$password = "dachs";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-$pdo = new PDO('mysql:host=localhost;dbname=db_webchat', $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
-?>
+$db = mysqli_connect("192.168.56.101", "aitec", "dachs", "db_webchat");
+		if(!$db)
+		{
+		  exit("Verbindungsfehler: ".mysqli_connect_error());
+		}
+?> 

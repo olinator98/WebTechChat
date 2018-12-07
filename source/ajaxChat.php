@@ -1,4 +1,23 @@
+<?php
+@ session_start();
+@ ob_start(); 
 
+		unset ($_SESSION["anmeldungFalsch"]);
+		echo "</br></br>";
+		
+		include("php/connection.php");
+
+	//Schutz vor Eingabe des Links in Browser. Ohne aktive Anmeldung läuft nichts. 
+	if (isset($_SESSION["nameOfTheUser"])){
+		
+		
+	}
+	else {
+		
+		header("Location: http://192.168.56.101/source/index.php");
+		echo "Bitte melden Sie sich zuerst an. "; 
+	}		
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +27,7 @@
 <link rel="stylesheet" type="text/css" href="js/jScrollPane/jScrollPane.css" />
 <link rel="stylesheet" type="text/css" href="css/page.css" />
 <link rel="stylesheet" type="text/css" href="css/chat.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
 
 
 </head>
@@ -19,6 +38,7 @@
             <a href="ajaxChat.php" class="active">Chat</a>
             <a href="myAccount.php">MyAccount</a>
             <a href="thisChat.php">This Chat</a>
+            <a href="logout.php">Logout</a>
             <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
             <i class="fa fa-bars"></i></a>
     </div>
@@ -61,7 +81,7 @@
         }
 </script> 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="src/jquery-3.1.1.min.js"></script>
 <script src="js/jScrollPane/jquery.mousewheel.js"></script>
 <script src="js/jScrollPane/jScrollPane.min.js"></script>
 <script src="js/script.js"></script>

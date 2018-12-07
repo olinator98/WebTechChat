@@ -6,7 +6,7 @@ $dbOptions = array(
 	'db_host' => '192.168.56.101',
 	'db_user' => 'aitec',
 	'db_pass' => 'dachs',
-	'db_name' => 'chat'
+	'db_name' => 'db_webchat'
 );
 
 /* Database Config End */
@@ -33,19 +33,14 @@ try{
 	// Handling the supported actions:
 	
 	switch($_GET['action']){
-		
-		case 'login':
-			$response = Chat::login($_POST['name'],$_POST['email']);
-		break;
-		
-		case 'checkLogged':
+		/*case 'checkLogged':
 			$response = Chat::checkLogged();
 		break;
 		
 		case 'logout':
 			$response = Chat::logout();
 		break;
-		
+		*/
 		case 'submitChat':
 			$response = Chat::submitChat($_POST['chatText']);
 		break;
