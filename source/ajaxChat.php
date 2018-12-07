@@ -36,9 +36,9 @@
     <div id="navigation" class = "navigation" name="navigation">
 
             <a href="ajaxChat.php" class="active">Chat</a>
-            <a href="myAccount.php">MyAccount</a>
+            <a href="php/myAccountCheck.php">MyAccount</a>
             <a href="thisChat.php">This Chat</a>
-            <a href="logout.php">Logout</a>
+            <a href="php/logout.php">Logout</a>
             <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
             <i class="fa fa-bars"></i></a>
     </div>
@@ -48,12 +48,6 @@
 
     <div id="chatBottomBar" class="rounded">
     	<div class="tip"></div>
-        
-        <form id="loginForm" method="post" action="">
-            <input id="name" name="name" class="rounded" maxlength="16" value = "peterpan"/>
-            <input id="email" name="email" class="rounded" value = "peterpan"/>
-            <input type="submit" class="blueButton" value="Login" />
-        </form>
         
         <form id="submitForm" method="post" action="">
             <input id="chatText" name="chatText" class="rounded" maxlength="255" />
