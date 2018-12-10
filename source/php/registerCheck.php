@@ -3,16 +3,23 @@
 @ session_start();
 ob_start();
 header("Location: http://192.168.56.101/source/index.php");
-
 ?>
 <!--<meta http-equiv="refresh" content="2; URL=index.php">-->
 <?php
+include("connection.php");
 
-include("connection.php"); 
+$username = $_POST["email"];
+$username = trim($username);
+$username = stripslashes($username);
+$username = htmlspecialchars($username);
+$username = mysqli_real_escape_string($db, $username);
+
+$password = $_POST["passwordRegister"];
+
 
 //This if for the new Login. There are all the informations about the user in one table
 
-$username= htmlspecialchars($_POST["email"]);
+//$username= htmlspecialchars($_POST["email"]);
 //Useless $passwort = $_POST["passwort_register"];
 //Benutzereingaben Non-Login
 
@@ -31,7 +38,7 @@ $hashDB = md5( rand(0,1000) ); // Generate random 32 character hash and assign i
 			
 			//Coding the passwort with sha256
 			// Erzeugung von Passwort-Hash
-			$password = $_POST["passwordRegister"];
+			
 			$hash = hash('sha256', $password);
 				
 	

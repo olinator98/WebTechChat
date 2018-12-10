@@ -34,7 +34,7 @@ var chat = {
 		
 		// Logging a person in the chat:
 		
-		$('#loginForm').submit(function(){
+		/*$('#loginForm').submit(function(){
 			
 			if(working) return false;
 			working = true;
@@ -53,7 +53,7 @@ var chat = {
 			
 			return false;
 		});
-		
+		*/
 		// Submitting a new chat entry:
 		
 		$('#submitForm').submit(function(){
@@ -100,20 +100,6 @@ var chat = {
 		
 		// Logging the user out:
 		
-		$('a.logoutButton').live('click',function(){
-			
-			$('#chatTopBar > span').fadeOut(function(){
-				$(this).remove();
-			});
-			
-			$('#submitForm').fadeOut(function(){
-				$('#loginForm').fadeIn();
-			});
-			
-			$.chatPOST('logout');
-			
-			return false;
-		});
 		
 		// Checking whether the user is already logged (browser refresh)
 		
@@ -166,6 +152,7 @@ var chat = {
 			break;
 			
 			case 'chatLine':
+			alert("hallo");
 				arr = [
 					'<div class="chat chat-',params.id,' rounded"><span class="gravatar"><img src="',params.gravatar,
 					'" width="23" height="23" onload="this.style.visibility=\'visible\'" />','</span><span class="author">',params.author,
@@ -221,7 +208,7 @@ var chat = {
 		}
 		
 		// If this isn't a temporary chat:
-		if(params.id.toString().charAt(0) != 't'){
+		/*if(params.id.toString().charAt(0) != 't'){
 			var previous = $('#chatLineHolder .chat-'+(+params.id - 1));
 			if(previous.length){
 				previous.after(markup);
@@ -229,7 +216,7 @@ var chat = {
 			else chat.data.jspAPI.getContentPane().append(markup);
 		}
 		else chat.data.jspAPI.getContentPane().append(markup);
-		
+		*/
 		// As we added new content, we need to
 		// reinitialise the jScrollPane plugin:
 		

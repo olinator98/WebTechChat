@@ -21,6 +21,7 @@ $result = mysqli_query($db, $qry);
   }
 
 echo "<h1>new users to be confirmed</h1>";
+
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {

@@ -4,9 +4,15 @@ include("connection.php");
 
 ob_start();
 
-
 $password = $_POST["password"];
 $username = $_POST["username"];
+
+$username = trim($username);
+$username = stripslashes($username);
+$username = htmlspecialchars($username);
+$username = mysqli_real_escape_string($db, $username);
+
+
 
 //INPUT VALIDATION HERE
 
