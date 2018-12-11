@@ -45,7 +45,7 @@ if($total == 1){
 	header("Location: http://192.168.56.101/source/ajaxChat.php"); //Umleitung bei korrekter Anmeldung auf die Main Site der Web
 }
 else{
-	$_SESSION["anmeldungFalsch"] = 0;
+	$_SESSION["anmeldungFalsch"] = "true";
    header("Location: http://192.168.56.101/source/index.php"); //Umleitung bei falscher Anmeldung auf die Startseite der Web 
 		 
 }

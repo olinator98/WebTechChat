@@ -7,11 +7,11 @@
 
 
 .jspPane{
-	position: absolute;
+	
 }
 
 .jspVerticalBar{
-	position: absolute;
+	
 	top: 0;
 	right: 0;
 	width: 16px;
@@ -20,7 +20,7 @@
 }
 
 .jspHorizontalBar{
-	position: absolute;
+	
 	bottom: 0;
 	left: 0;
 	width: 100%;

@@ -42,6 +42,7 @@
             <i class="fa fa-bars"></i></a>
     </div>
     <div id="chatContainer">
+    <div id="jspPane">
 
 <div id="chatTopBar" class="rounded"></div>
 <div id="chatLineHolder"></div>

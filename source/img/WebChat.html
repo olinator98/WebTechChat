@@ -1,0 +1,67 @@
+
+<!-- saved from url=(0038)http://192.168.56.101/source/index.php -->
+<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>alert('wrong input')</script>
+
+  
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./WebChat_files/page.css">
+    <link rel="stylesheet" href="./WebChat_files/font-awsome.min.css">
+    <title>WebChat</title>
+  </head>
+  <body>
+
+        <header>
+            
+            <nav class="navigation" name="navigation" id="navigation">
+                <a href="http://192.168.56.101/source/index.php" class="active">Home</a>
+                <a href="http://192.168.56.101/source/index.php#login">Login</a>
+                <a href="http://192.168.56.101/source/index.php#information">Information</a>
+                <a href="http://192.168.56.101/source/registration.php">Register</a>
+                <a href="http://192.168.56.101/source/php/logout.php">Logout</a>
+                <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i></a>
+            </nav>
+        </header>
+
+
+        <article class="login" name="login" id="login">
+            
+    <h1>
+         Login
+    </h1>
+    <form id="loginForm" name="loginForm" method="POST" action="http://192.168.56.101/source/php/loginCheck.php">
+      Username:<br>
+      <input type="text" id="username" name="username" placeholder="username" required="">
+      <br>
+      Password: <br>
+      <input type="password" id="password" name="password" placeholder="password" required="">
+      <br>
+      <input type="submit"> 
+    </form>
+        </article>
+
+        
+        <script>
+        function toggleMenu() {
+            var x = document.getElementById("navigation");
+            if (x.className === "navigation") {
+                x.className += " responsive";
+            } else {
+                x.className = "navigation";
+            }
+        }
+        </script>
+
+        <footer class="footer">
+            <p>Oliver Werlen | Sven Guggisberg</p>
+            <p>Webtech</p>
+        </footer>
+
+
+
+        
+
+
+  
+</body></html>

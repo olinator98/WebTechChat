@@ -11,7 +11,7 @@ class ChatLine extends ChatBase{
 			INSERT INTO webchat_lines (author, gravatar, text)
 			VALUES (
 				'".DB::esc($this->author)."',
-				'".DB::esc($this->gravatar)."',
+				'".DB::esc('')."',
 				'".DB::esc($this->text)."'
 		)");
 		

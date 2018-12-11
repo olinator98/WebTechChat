@@ -110,7 +110,7 @@ class Chat{
 		$result = DB::query('SELECT * FROM webchat_lines WHERE id > '.$lastID.' ORDER BY id ASC');
 	
 		$chats = array();
-		while($chat = $result->fetch_object()){
+		while($chats = $result->fetch_object()){
 			
 			// Returning the GMT (UTC) time of the chat creation:
 			
@@ -119,7 +119,7 @@ class Chat{
 				'minutes'	=> gmdate('i',strtotime($chat->ts))
 			);
 			
-			$chat->gravatar = Chat::gravatarFromHash($chat->gravatar);
+			//$chat->gravatar = Chat::gravatarFromHash($chat->gravatar);
 			
 			$chats[] = $chat;
 		}
