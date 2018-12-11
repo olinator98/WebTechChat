@@ -9,15 +9,18 @@ $result = mysqli_query($db, $qry);
   if (isset($_GET['toActivate'])) {
     $qry = "UPDATE webchat_users SET active='true' WHERE username ='$_GET[toActivate]'";
     mysqli_query($db, $qry);
+    header("Location: http://192.168.56.101/source/myAccount.php");
   }
   if (isset($_GET['toAdmin'])) {
     $qry = "UPDATE webchat_users SET user_state='true' WHERE username ='$_GET[toAdmin]'";
     mysqli_query($db, $qry);
+    header("Location: http://192.168.56.101/source/myAccount.php");
   }
 
   if (isset($_GET['toRemove'])) {
     $qry = "DELETE FROM webchat_users WHERE username ='$_GET[toRemove]'";
     mysqli_query($db, $qry);
+    header("Location: http://192.168.56.101/source/myAccount.php");
   }
 
 echo "<h1>new users to be confirmed</h1>";
@@ -26,7 +29,7 @@ echo "<h1>new users to be confirmed</h1>";
         // output data of each row
         while($row = $result->fetch_assoc()) {
             echo "username: " . $row["username"]. "";
-            echo "<a href='adminPane.php?toActivate=". $row["username"]."'>make active</a>";
+            echo "<a href='php/adminPane.php?toActivate=". $row["username"]."'>make active</a>";
             echo "<br>";
         }
     } else {
@@ -41,11 +44,12 @@ echo "<h1>new users to be confirmed</h1>";
         // output data of each row
         while($row = $resultConf->fetch_assoc()) {
             echo "username: " . $row["username"]. "";
-            echo "<a href='adminPane.php?toAdmin=". $row["username"]."'>make admin</a>";
-            echo "<a href='adminPane.php?toRemove=". $row["username"]."'>Remove</a>";
+            echo "<a href='php/adminPane.php?toAdmin=". $row["username"]."'>make admin</a>";
+            echo "<a href='php/adminPane.php?toRemove=". $row["username"]."'>Remove</a>";
             echo "<br>";
         }
     } else {
         echo "<br>0 results";
     }
+
 ?>
