@@ -14,11 +14,11 @@ $dbOptions = array(
 //report everything except notice
 error_reporting(E_ALL ^ E_NOTICE);
 
-require "classes/DB.class.php";
-require "classes/Chat.class.php";
-require "classes/ChatBase.class.php";
-require "classes/ChatLine.class.php";
-require "classes/ChatUser.class.php";
+require "php/classes/DB.class.php";
+require "php/classes/Chat.class.php";
+require "php/classes/ChatBase.class.php";
+require "php/classes/ChatLine.class.php";
+require "php/classes/ChatUser.class.php";
 
 session_name('webchat');
 session_start();
@@ -31,22 +31,14 @@ try{
 
 	// Handling the supported actions:
 	switch($_GET['action']){
-		case 'checkLogged':
-			$response = Chat::checkLogged();
-		break;
-		
-		case 'logout':
-			$response = Chat::logout();
-		break;
+
 		case 'submitChat':
 		$chatText = $_POST['chatText'];
 		$chatText = trim($chatText);
 		$chatText = stripslashes($chatText);
 		$chatText = htmlspecialchars($chatText);
 		//$chatText = mysqli_real_escape_string($db, $chatText);
-			$response = Chat::submitChat($chatText);
-			alert("in da chat");
-			alert($_POST['chatText']);
+		$response = Chat::submitChat($chatText);
 		break;
 		
 		case 'getUsers':

@@ -1,5 +1,5 @@
 <?php
-
+@session_start();
 /* The Chat class exploses public static methods, used by ajax.php */
 
 class Chat{
@@ -41,7 +41,7 @@ class Chat{
 	public static function checkLogged(){
 		$response = array('logged' => false);
 			
-		if($_SESSION['nameOfTheUser']){
+		if(isset($_SESSION['nameOfTheUser'])){
 			$response['logged'] = true;
 			$response['loggedAs'] = array(
 				'name'		=> $_SESSION['nameOfTheUser'],
@@ -59,10 +59,7 @@ class Chat{
 	}
 	
 	public static function submitChat($chatText){
-		if(!$_SESSION['nameOfTheUser']){
-			throw new Exception('You are not logged in');
-		}
-		
+
 		if(!$chatText){
 			throw new Exception('You haven\' entered a chat message.');
 		}

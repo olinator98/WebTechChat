@@ -26,7 +26,8 @@ $hash = hash('sha256', $password);
 //Richtiger Benutzername
 $result = "Select username, user_password from webchat_users 
 where user_password = '$hash' 
-AND username ='$username'";
+AND username ='$username'
+AND active = 'true'";
 
 $result = mysqli_query($db, $result);
 echo mysqli_error($db);

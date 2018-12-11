@@ -90,10 +90,9 @@ var chat = {
 			
 			$.chatPOST('submitChat',$(this).serialize(),function(r){
 				working = false;
-				alert("post sended");
 				
 				$('#chatText').val('');
-				$('div.chat-'+tempID).remove();
+				//$('div.chat-'+tempID).remove();
 				
 				params['id'] = r.insertID;
 				chat.addChatLine($.extend({},params));
@@ -120,12 +119,7 @@ var chat = {
 		});
 		
 		// Checking whether the user is already logged (browser refresh)
-		
-		$.chatGET('checkLogged',function(r){
-			if(r.logged){
-				chat.login(r.loggedAs.name,r.loggedAs.gravatar);
-			}
-		});
+
 		
 		// Self executing timeout functions
 		
@@ -345,11 +339,11 @@ var chat = {
 // Custom GET & POST wrappers:
 
 $.chatPOST = function(action,data,callback){
-	$.post('192.168.56.101/source/php/ajax.php?action='+action,data,callback,'json');
+	$.post('ajax.php?action='+action,data,callback,'json');
 }
 
 $.chatGET = function(action,data,callback){
-	$.get('192.168.56.101/source/php/ajax.php?action='+action,data,callback,'json');
+	$.get('ajax.php?action='+action,data,callback,'json');
 }
 
 // A custom jQuery method for placeholder text:
