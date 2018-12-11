@@ -1,5 +1,4 @@
 <?php
-
 class DB {
 	private static $instance;
 	private $MySQLi;
@@ -35,6 +34,7 @@ class DB {
 	}
 	
 	public static function query($q){
+		mysqli_query($db, $q);
 		return self::$instance->MySQLi->query($q);
 	}
 	

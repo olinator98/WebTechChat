@@ -17,8 +17,11 @@ var chat = {
 	// Init binds event listeners and sets up timers:
 	
 	init : function(){
+		this.getChats(30);
+		// Using the defaultText jQuery plugin, included at the bottom:
+		$('#name').defaultText('Nickname');
+		$('#email').defaultText('Email (Gravatars are Enabled)');
 		
-
 		// Converting the #chatLineHolder div into a jScrollPane,
 		// and saving the plugin's API in chat.data:
 		
@@ -26,7 +29,6 @@ var chat = {
 			verticalDragMinHeight: 12,
 			verticalDragMaxHeight: 12
 		}).data('jsp');
-		
 		// We use the working variable to prevent
 		// multiple form submissions:
 		
@@ -34,7 +36,7 @@ var chat = {
 		
 		// Logging a person in the chat:
 		
-		/*$('#loginForm').submit(function(){
+		$('#loginForm').submit(function(){
 			
 			if(working) return false;
 			working = true;
@@ -53,12 +55,13 @@ var chat = {
 			
 			return false;
 		});
-		*/
+		
 		// Submitting a new chat entry:
 		
 		$('#submitForm').submit(function(){
 			
 			var text = $('#chatText').val();
+			//alert(text);
 			
 			if(text.length == 0){
 				return false;
@@ -87,6 +90,7 @@ var chat = {
 			
 			$.chatPOST('submitChat',$(this).serialize(),function(r){
 				working = false;
+				alert("post sended");
 				
 				$('#chatText').val('');
 				$('div.chat-'+tempID).remove();
@@ -100,6 +104,20 @@ var chat = {
 		
 		// Logging the user out:
 		
+		$('a.logoutButton').live('click',function(){
+			
+			$('#chatTopBar > span').fadeOut(function(){
+				$(this).remove();
+			});
+			
+			$('#submitForm').fadeOut(function(){
+				$('#loginForm').fadeIn();
+			});
+			
+			$.chatPOST('logout');
+			
+			return false;
+		});
 		
 		// Checking whether the user is already logged (browser refresh)
 		
@@ -128,7 +146,7 @@ var chat = {
 		
 		chat.data.name = name;
 		chat.data.gravatar = gravatar;
-		//$('#chatTopBar').html(chat.render('loginTopBar',chat.data));
+		$('#chatTopBar').html(chat.render('loginTopBar',chat.data));
 		
 		$('#loginForm').fadeOut(function(){
 			$('#submitForm').fadeIn();
@@ -152,7 +170,6 @@ var chat = {
 			break;
 			
 			case 'chatLine':
-			alert("hallo");
 				arr = [
 					'<div class="chat chat-',params.id,' rounded"><span class="gravatar"><img src="',params.gravatar,
 					'" width="23" height="23" onload="this.style.visibility=\'visible\'" />','</span><span class="author">',params.author,
@@ -208,7 +225,7 @@ var chat = {
 		}
 		
 		// If this isn't a temporary chat:
-		/*if(params.id.toString().charAt(0) != 't'){
+		if(params.id.toString().charAt(0) != 't'){
 			var previous = $('#chatLineHolder .chat-'+(+params.id - 1));
 			if(previous.length){
 				previous.after(markup);
@@ -216,7 +233,7 @@ var chat = {
 			else chat.data.jspAPI.getContentPane().append(markup);
 		}
 		else chat.data.jspAPI.getContentPane().append(markup);
-		*/
+		
 		// As we added new content, we need to
 		// reinitialise the jScrollPane plugin:
 		
@@ -328,11 +345,11 @@ var chat = {
 // Custom GET & POST wrappers:
 
 $.chatPOST = function(action,data,callback){
-	$.post('php/ajax.php?action='+action,data,callback,'json');
+	$.post('192.168.56.101/source/php/ajax.php?action='+action,data,callback,'json');
 }
 
 $.chatGET = function(action,data,callback){
-	$.get('php/ajax.php?action='+action,data,callback,'json');
+	$.get('192.168.56.101/source/php/ajax.php?action='+action,data,callback,'json');
 }
 
 // A custom jQuery method for placeholder text:

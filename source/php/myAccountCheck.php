@@ -8,6 +8,7 @@ $result = "Select username, user_state from webchat_users WHERE
 
     $result = mysqli_query($db, $result);
     echo mysqli_error($db);
+    
     $num_rows = mysqli_num_rows($result);
 
     $total = $num_rows;

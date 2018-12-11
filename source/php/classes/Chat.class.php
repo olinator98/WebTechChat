@@ -59,7 +59,7 @@ class Chat{
 	}
 	
 	public static function submitChat($chatText){
-		if(!$_SESSION['user']){
+		if(!$_SESSION['nameOfTheUser']){
 			throw new Exception('You are not logged in');
 		}
 		
@@ -84,8 +84,8 @@ class Chat{
 	
 	public static function getUsers(){
 		if($_SESSION['nameOfTheUser']){
-			//$user = new ChatUser(array('name' => $_SESSION['user']['name']));
-			//$user->update();
+			$user = new ChatUser(array('name' => $_SESSION['nameOfTheUser']));
+			$user->update();
 		}
 		
 		// Deleting chats older than 5 minutes and users inactive for 30 seconds
