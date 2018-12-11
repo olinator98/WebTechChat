@@ -3,7 +3,7 @@
 /* The Chat class exploses public static methods, used by ajax.php */
 
 class Chat{
-	
+	/*
 	public static function login($name,$email){
 		if(!$name || !$email){
 			throw new Exception('Fill in all the required fields.');
@@ -36,16 +36,16 @@ class Chat{
 			'name'		=> $name,
 			'gravatar'	=> Chat::gravatarFromHash($gravatar)
 		);
-	}
+	}*/
 	
 	public static function checkLogged(){
 		$response = array('logged' => false);
 			
-		if($_SESSION['user']['name']){
+		if($_SESSION['nameOfTheUser']){
 			$response['logged'] = true;
 			$response['loggedAs'] = array(
-				'name'		=> $_SESSION['user']['name'],
-				'gravatar'	=> Chat::gravatarFromHash($_SESSION['user']['gravatar'])
+				'name'		=> $_SESSION['nameOfTheUser'],
+				//'gravatar'	=> Chat::gravatarFromHash($_SESSION['user']['gravatar'])
 			);
 		}
 		
@@ -53,16 +53,13 @@ class Chat{
 	}
 	
 	public static function logout(){
-		DB::query("DELETE FROM webchat_users WHERE name = '".DB::esc($_SESSION['user']['name'])."'");
-		
-		$_SESSION = array();
-		unset($_SESSION);
+		header("Location: http://192.168.56.101/source/php/logout.php");
 
 		return array('status' => 1);
 	}
 	
 	public static function submitChat($chatText){
-		if(!$_SESSION['user']){
+		if(!$_SESSION['nameOfTheUser']){
 			throw new Exception('You are not logged in');
 		}
 		
@@ -71,8 +68,8 @@ class Chat{
 		}
 	
 		$chat = new ChatLine(array(
-			'author'	=> $_SESSION['user']['name'],
-			'gravatar'	=> $_SESSION['user']['gravatar'],
+			'author'	=> $_SESSION['nameOfTheUser'],
+			//'gravatar'	=> $_SESSION['user']['gravatar'],
 			'text'		=> $chatText
 		));
 	
@@ -86,8 +83,8 @@ class Chat{
 	}
 	
 	public static function getUsers(){
-		if($_SESSION['user']['name']){
-			$user = new ChatUser(array('name' => $_SESSION['user']['name']));
+		if($_SESSION['nameOfTheUser']){
+			$user = new ChatUser(array('name' => $_SESSION['nameOfTheUser']));
 			$user->update();
 		}
 		
@@ -100,7 +97,7 @@ class Chat{
 		
 		$users = array();
 		while($user = $result->fetch_object()){
-			$user->gravatar = Chat::gravatarFromHash($user->gravatar,30);
+			//$user->gravatar = Chat::gravatarFromHash($user->gravatar,30);
 			$users[] = $user;
 		}
 	
@@ -133,10 +130,6 @@ class Chat{
 		return array('chats' => $chats);
 	}
 	
-	public static function gravatarFromHash($hash, $size=23){
-		return 'http://www.gravatar.com/avatar/'.$hash.'?size='.$size.'&amp;default='.
-				urlencode('http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?size='.$size);
-	}
 }
 
 

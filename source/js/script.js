@@ -17,7 +17,7 @@ var chat = {
 	// Init binds event listeners and sets up timers:
 	
 	init : function(){
-		
+		this.getChats(30);
 		// Using the defaultText jQuery plugin, included at the bottom:
 		$('#name').defaultText('Nickname');
 		$('#email').defaultText('Email (Gravatars are Enabled)');
@@ -29,7 +29,6 @@ var chat = {
 			verticalDragMinHeight: 12,
 			verticalDragMaxHeight: 12
 		}).data('jsp');
-		
 		// We use the working variable to prevent
 		// multiple form submissions:
 		
@@ -62,6 +61,7 @@ var chat = {
 		$('#submitForm').submit(function(){
 			
 			var text = $('#chatText').val();
+			//alert(text);
 			
 			if(text.length == 0){
 				return false;
@@ -90,6 +90,7 @@ var chat = {
 			
 			$.chatPOST('submitChat',$(this).serialize(),function(r){
 				working = false;
+				alert("post sended");
 				
 				$('#chatText').val('');
 				$('div.chat-'+tempID).remove();
@@ -344,11 +345,11 @@ var chat = {
 // Custom GET & POST wrappers:
 
 $.chatPOST = function(action,data,callback){
-	$.post('php/ajax.php?action='+action,data,callback,'json');
+	$.post('192.168.56.101/source/php/ajax.php?action='+action,data,callback,'json');
 }
 
 $.chatGET = function(action,data,callback){
-	$.get('php/ajax.php?action='+action,data,callback,'json');
+	$.get('192.168.56.101/source/php/ajax.php?action='+action,data,callback,'json');
 }
 
 // A custom jQuery method for placeholder text:

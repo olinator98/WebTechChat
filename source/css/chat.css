@@ -6,19 +6,22 @@
 	box-sizing: border-box;
 
 }
+body {
+	background-image: url("http://192.168.56.101/source/img/bg.jpg");
+  }
 #chatContainer{
 	padding: 1%; 
 	width: 100%;
     float: left;
 
-	background-color: cadetblue; 
+	background-color: black; 
 	
 }
 #chatBottomBar {
 	padding: 5%; 
     width: 100%;
 	float: left;
-	background-color: blue; 
+	background-color: white; 
 }
 #chatTopBar{
     width: 100%;
@@ -31,8 +34,8 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: black;
     text-align: center;	
 }
 
@@ -59,13 +62,13 @@
 }
 
 .chat span{
-	color:#777777;
-	text-shadow:1px 1px 0 #FFFFFF;
+	color:black;
+	text-shadow:1px 1px 0 white;
 	font-size:12px;
 }
 
 .chat .text{
-	color:#444444;
+	color:black;
 	display:inline-block;
 	font-size:15px;
 	overflow:hidden;
@@ -74,7 +77,6 @@
 }
 
 .chat .gravatar{
-	background:url('http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?size=23') no-repeat;
 	left:7px;
 	position:absolute;
 	top:7px;
@@ -123,23 +125,6 @@
 /* Bottom Bar */
 
 
-#chatBottomBar{
-	background:url('../img/solid_gray.jpg') repeat-x #d0d0d0;
-	position:relative;
-	padding:10px;
-	border:1px solid #fff;
-}
-
-#chatBottomBar .tip{
-	position:absolute;
-	width:0;
-	height:0;
-	border:10px solid transparent;
-	border-bottom-color:#eeeeee;
-	top:-20px;
-	left:20px;
-}
-
 #chatContainer input{
 	background:url('../img/input_bg.jpg') repeat-x #dcdcdc;
 	height:26px;
@@ -154,13 +139,9 @@
 	outline:none;
 }
 
-
-#submitForm{
-	display:none;
-}
-
 input#chatText{
 	/* The chat submit text field */
+	color:white;
 	width:20%;
 }
 
@@ -280,7 +261,7 @@ p.noChats,
     }
 
     .jspContainer{
-        background-color: blue;
+        background-color: black;
         position:center;
         width: 100%;
     }

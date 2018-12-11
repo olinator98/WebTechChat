@@ -6,6 +6,9 @@
 	box-sizing: border-box;
 
 }
+body {
+	background-image: url("http://192.168.56.101/source/img/bg.jpg");
+  }
 .navigation{
 	padding: 1%; 
 	width: 100%;
@@ -13,23 +16,23 @@
 	
 }
 .register {
-	padding: 5%; 
+	padding: 1%; 
     width: 100%;
 	float: left;
 	background-color: blue; 
 }
 .login {
-	padding: 5%; 
+	margin: auto;
+	padding: 1%; 
     width: 100%;
-	float: right;
-	background-color: yellow; 
+	background-color: white; 
 }
 .information
 {
+	margin: auto;
 	padding: 5%; 
     width: 100%;
-	float: left;
-	background-color: orange; 	
+	background-color: white; 	
 }
 .footer
 {
@@ -37,8 +40,8 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: black;
     text-align: center;	
 }
 .jspContainer{
@@ -55,10 +58,29 @@ input[type=text], input[type=email], input[type=password], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
+/* unvisited link */
+a:link {
+	color: red;
+  }
+  
+  /* visited link */
+  a:visited {
+	color: green;
+  }
+  
+  /* mouse over link */
+  a:hover {
+	color: hotpink;
+  }
+  
+  /* selected link */
+  a:active {
+	color: blue;
+  }
 
 input[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -72,9 +94,9 @@ input[type=submit]:hover {
 }
 
 .register, .login{
-	border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+	
+    background-color: white;
+    padding: 5%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -99,15 +121,15 @@ a:hover{
 	clear:both;
 }
 
-navigation {
+.navigation {
 	overflow: hidden;
-	background-color: teal;
+	background-color: white;
   }
   
   .navigation a {
 	float: left;
 	display: block;
-	color:blueviolet;
+	color: black;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -115,13 +137,13 @@ navigation {
   }
   
   .navigation a:hover {
-	background-color: burlywood;
-	color: black;
+	background-color: black;
+	color: white;
   }
   
   .active {
-	background-color: teal;
-	color: white;
+	background-color: white;
+	color: black;
   }
   
   .navigation .icon {
